@@ -52,7 +52,8 @@ const AuthProvider = ({children}) => {
 
     const fetchUser = async () => {
         const token = Cookies.get('authToken');
-        if(token){
+        console.log(token);
+        if(!token){
             try {
                 const {data} = await api.get('/auth');
                 console.log(data);
